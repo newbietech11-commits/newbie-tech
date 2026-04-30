@@ -61,6 +61,14 @@
 }
 .fsub:hover { background:var(--gold-mid); transform:translateY(-2px); box-shadow:0 10px 28px rgba(107,127,168,0.3); }
 
+.fsub:disabled { opacity:0.6; cursor:not-allowed; transform:none; }
+
+.form-error {
+  margin-bottom:12px; padding:10px 14px;
+  background:rgba(220,50,50,0.12); border:1px solid rgba(220,50,50,0.3);
+  border-radius:7px; font-size:13px; color:#f87171;
+}
+
 /* Success state */
 .contact-success-icon  { font-size:44px; margin-bottom:16px; color:var(--gold-mid); animation:scaleIn 0.5s var(--ease); }
 .contact-success-title { font-family:var(--serif); color:white; font-size:26px; font-weight:600; margin-bottom:12px; }

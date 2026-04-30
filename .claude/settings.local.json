@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s --max-time 10 https://api.github.com)"
+    ]
+  }
+}

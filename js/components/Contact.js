@@ -1,5 +1,5 @@
 import { Component } from './Component.js';
-import { CONTACT_LINKS, ENGAGEMENT_TYPES } from '../data.js';
+import { CONTACT_LINKS, ENGAGEMENT_TYPES, FORM_ENDPOINT } from '../data.js';
 
 export class Contact extends Component {
   _formHtml() {
@@ -20,7 +20,7 @@ export class Contact extends Component {
           </div>
         </div>
         <div class="reveal" id="form-mount">
-          <form class="cform" id="contact-form">
+          <form class="cform" id="contact-form" novalidate>
             <div class="frow">
               <div class="fg">
                 <label>Your Name</label>
@@ -42,7 +42,8 @@ export class Contact extends Component {
               <label>Project Details</label>
               <textarea name="message" placeholder="Describe your project, timeline, and what success looks like..." required></textarea>
             </div>
-            <button type="submit" class="fsub">Send Enquiry</button>
+            <div class="form-error" id="form-error" style="display:none"></div>
+            <button type="submit" class="fsub" id="fsub-btn">Send Enquiry</button>
           </form>
         </div>
       </div>
@@ -68,10 +69,42 @@ export class Contact extends Component {
   }
 
   bindEvents() {
-    this.el.addEventListener('submit', e => {
+    this.el.addEventListener('submit', async e => {
       if (e.target.id !== 'contact-form') return;
       e.preventDefault();
-      this.find('#form-mount').innerHTML = this._successHtml();
+
+      const form   = e.target;
+      const btn    = this.find('#fsub-btn');
+      const errBox = this.find('#form-error');
+      const data   = Object.fromEntries(new FormData(form));
+
+      if (!data.name || !data.email || !data.type || !data.message) {
+        errBox.textContent = 'Please fill in all fields.';
+        errBox.style.display = 'block';
+        return;
+      }
+      errBox.style.display = 'none';
+
+      if (!FORM_ENDPOINT) {
+        this.find('#form-mount').innerHTML = this._successHtml();
+        return;
+      }
+
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        await fetch(FORM_ENDPOINT, {
+          method: 'POST',
+          body: JSON.stringify({ ...data, submitted: new Date().toISOString() }),
+        });
+        this.find('#form-mount').innerHTML = this._successHtml();
+      } catch {
+        errBox.textContent = 'Something went wrong. Please email us directly.';
+        errBox.style.display = 'block';
+        btn.textContent = 'Send Enquiry';
+        btn.disabled = false;
+      }
     });
   }
 }

@@ -177,10 +177,11 @@ export const TIMELINE_ITEMS = [
 ];
 
 export const CONTACT_LINKS = [
-  { icon:'✉',  label:'hello@newbietech.dev',        href:'mailto:hello@newbietech.dev' },
-  { icon:'in', label:'linkedin.com/in/newbietech',  href:'#' },
-  { icon:'GH', label:'github.com/newbietech',       href:'#' },
+  { icon:'✉', label:'newbietech11@gmail.com', href:'mailto:newbietech11@gmail.com' },
 ];
+
+/* Paste your deployed Google Apps Script URL here */
+export const FORM_ENDPOINT = '';
 
 export const ENGAGEMENT_TYPES = [
   'Cloud / DevOps (AWS, GCP, Azure)',
