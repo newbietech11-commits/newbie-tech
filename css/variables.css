@@ -1,0 +1,20 @@
+:root {
+  --navy:        #0C1628;
+  --navy2:       #132040;
+  --navy3:       #1A2D58;
+  --gold:        #6B7FA8;
+  --gold-light:  #EEF0F6;
+  --gold-mid:    #8A9DC4;
+  --white:       #FFFFFF;
+  --offwhite:    #F8F7F5;
+  --text:        #0C1628;
+  --text-muted:  #56657A;
+  --text-light:  #8A99AE;
+  --border:      #E3E7EE;
+  --border2:     #CBD3DF;
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'DM Sans', system-ui, sans-serif;
+  --mono:   'JetBrains Mono', monospace;
+  --ease:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease2:  cubic-bezier(0.4, 0, 0.2, 1);
+}

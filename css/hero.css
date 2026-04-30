@@ -1,0 +1,143 @@
+/* ── Hero layout ── */
+#hero {
+  min-height:100vh;
+  display:grid; grid-template-columns:1fr 1fr;
+  align-items:center; gap:64px;
+  padding:100px 60px 80px;
+  position:relative; overflow:hidden;
+}
+.hero-bg {
+  position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(135deg, var(--offwhite) 0%, var(--white) 60%);
+  z-index:0;
+}
+.hero-orb {
+  position:absolute; border-radius:50%; filter:blur(80px); pointer-events:none; z-index:0;
+}
+.hero-orb-1 {
+  width:600px; height:600px; right:-100px; top:-100px;
+  background:radial-gradient(circle, oklch(0.88 0.04 240) 0%, transparent 70%);
+  animation:fadeIn 1.5s ease;
+}
+.hero-orb-2 {
+  width:400px; height:400px; left:-80px; bottom:-80px;
+  background:radial-gradient(circle, oklch(0.93 0.02 240) 0%, transparent 70%);
+  animation:fadeIn 2s ease;
+}
+.hero-left  { position:relative; z-index:1; }
+.hero-right { position:relative; z-index:1; }
+
+/* Hero tag */
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:7px 16px;
+  background:var(--gold-light); border:1px solid var(--border2);
+  border-radius:100px; margin-bottom:28px;
+  font-size:12px; font-weight:500; color:var(--gold);
+  letter-spacing:1.5px; text-transform:uppercase;
+  animation:fadeIn 0.8s var(--ease);
+}
+.hero-tag-dot {
+  width:7px; height:7px; background:var(--gold); border-radius:50%;
+  animation:dotPulse 2.5s infinite;
+}
+
+/* Hero headline */
+h1.htitle {
+  font-family:var(--serif);
+  font-size:clamp(52px, 5.5vw, 82px);
+  font-weight:700; line-height:1.02;
+  letter-spacing:-2px; color:var(--navy);
+  margin-bottom:24px;
+  animation:fadeUp 0.9s 0.15s var(--ease) both;
+}
+h1.htitle em { font-style:italic; color:var(--gold); }
+
+.hero-sub {
+  font-size:17px; font-weight:300; color:var(--text-muted);
+  line-height:1.8; max-width:460px; margin-bottom:40px;
+  animation:fadeUp 0.9s 0.25s var(--ease) both;
+}
+
+.hero-btns {
+  display:flex; gap:14px; flex-wrap:wrap;
+  margin-bottom:56px;
+  animation:fadeUp 0.9s 0.35s var(--ease) both;
+}
+
+/* Metrics bar */
+.metrics-bar {
+  display:flex; overflow:hidden;
+  border:1px solid var(--border); border-radius:10px;
+  animation:fadeUp 0.9s 0.45s var(--ease) both;
+  width:fit-content;
+}
+.mtr {
+  padding:18px 28px; text-align:center;
+  border-right:1px solid var(--border);
+  position:relative; overflow:hidden;
+}
+.mtr::before {
+  content:''; position:absolute; inset:0;
+  background:var(--offwhite); transform:scaleY(0); transform-origin:bottom;
+  transition:transform 0.4s var(--ease); z-index:0;
+}
+.mtr:hover::before { transform:scaleY(1); }
+.mtr:last-child { border-right:none; }
+.mtr-n {
+  font-family:var(--serif); font-size:34px; font-weight:700;
+  color:var(--navy); line-height:1; position:relative; z-index:1;
+}
+.mtr-n sup { font-size:16px; color:var(--gold); }
+.mtr-l {
+  font-size:11px; font-weight:500; color:var(--text-light);
+  letter-spacing:0.8px; text-transform:uppercase;
+  margin-top:5px; position:relative; z-index:1;
+}
+
+/* ── Code window ── */
+.code-window {
+  background:#0D1117; border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px; overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.35);
+  animation:scaleIn 0.9s 0.3s var(--ease) both;
+  transition:transform 0.4s var(--ease), box-shadow 0.4s;
+}
+.code-window:hover { transform:translateY(-6px); box-shadow:0 48px 100px rgba(0,0,0,0.4); }
+
+.cw-titlebar {
+  display:flex; align-items:center; gap:8px;
+  padding:12px 18px; background:#161B22;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.cw-dot { width:12px; height:12px; border-radius:50%; }
+.cw-title { font-size:12px; color:rgba(255,255,255,0.3); margin-left:auto; font-family:monospace; letter-spacing:0.3px; }
+
+.cw-body { padding:22px 24px; font-family:var(--mono); font-size:13px; line-height:1.8; }
+.cw-line { display:flex; gap:16px; min-height:23px; }
+.cw-ln   { color:rgba(255,255,255,0.18); user-select:none; width:18px; text-align:right; flex-shrink:0; font-size:11px; padding-top:1px; }
+.cw-code { flex:1; }
+
+/* Syntax tokens */
+.tok-kw  { color:#FF7B72; }
+.tok-fn  { color:#D2A8FF; }
+.tok-str { color:#A5D6FF; }
+.tok-cmt { color:#8B949E; font-style:italic; }
+.tok-num { color:#79C0FF; }
+.tok-cls { color:#FFA657; }
+
+.cw-cursor {
+  display:inline-block; width:2px; height:14px;
+  background:#58A6FF; animation:blink 1s step-end infinite;
+  vertical-align:middle; margin-left:2px;
+}
+
+.cw-badge-row {
+  display:flex; gap:8px; padding:14px 24px 18px;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.cw-badge {
+  display:flex; align-items:center; gap:6px;
+  padding:5px 12px; border-radius:100px;
+  font-size:11px; font-weight:500; font-family:var(--sans);
+}

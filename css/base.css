@@ -1,0 +1,65 @@
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Scroll reveal ── */
+.reveal {
+  opacity:0;
+  transform:translateY(28px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+.reveal-left {
+  opacity:0;
+  transform:translateX(-28px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.reveal-left.visible { opacity:1; transform:translateX(0); }
+
+.reveal-scale {
+  opacity:0;
+  transform:scale(0.94);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.reveal-scale.visible { opacity:1; transform:scale(1); }
+
+/* ── Shared buttons ── */
+.btn-p {
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--navy);
+  color:white;
+  border-radius:7px;
+  font-size:14px;
+  font-weight:500;
+  font-family:var(--sans);
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s, background 0.2s;
+}
+.btn-p:hover { background:var(--navy3); transform:translateY(-3px); box-shadow:0 12px 32px rgba(12,22,40,0.2); }
+
+.btn-g {
+  display:inline-block;
+  padding:14px 32px;
+  background:transparent;
+  color:var(--navy);
+  border:1.5px solid var(--border2);
+  border-radius:7px;
+  font-size:14px;
+  font-weight:500;
+  font-family:var(--sans);
+  text-decoration:none;
+  cursor:pointer;
+  transition: border-color 0.25s, color 0.25s, transform 0.3s var(--ease);
+}
+.btn-g:hover { border-color:var(--navy); color:var(--navy); transform:translateY(-3px); }

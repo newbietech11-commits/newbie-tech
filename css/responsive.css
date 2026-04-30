@@ -1,0 +1,22 @@
+@media (max-width: 960px) {
+  nav { padding:0 24px; }
+  nav ul { display:none; }
+
+  #hero {
+    grid-template-columns:1fr;
+    padding:100px 24px 60px;
+  }
+  section.sec         { padding:70px 24px; }
+  #services, #contact { padding:70px 24px; }
+
+  .team-cols          { grid-template-columns:1fr; }
+  .tools-layout       { grid-template-columns:1fr; }
+  .contact-layout     { grid-template-columns:1fr; }
+  .exp-layout         { grid-template-columns:1fr; gap:40px; }
+  .frow               { grid-template-columns:1fr; }
+
+  footer {
+    flex-direction:column; gap:10px;
+    text-align:center; padding:24px;
+  }
+}
