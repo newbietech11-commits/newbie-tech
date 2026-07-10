@@ -1,15 +1,7 @@
 /* ─────────────────────────────────────────────
-   data.js  —  Single source of truth for all
+   data.js: Single source of truth for all
    content, configuration, and tool functions.
 ───────────────────────────────────────────── */
-
-export const ACCENT_COLORS = {
-  slate: { name:'Slate', gold:'#6B7FA8', mid:'#8A9DC4', light:'#EEF0F6', navy:'#0C1628', navy2:'#132040', navy3:'#1A2D58' },
-  gold:  { name:'Gold',  gold:'#B8933E', mid:'#D4AA60', light:'#F5EDD8', navy:'#0F1B2D', navy2:'#162438', navy3:'#1D3050' },
-  teal:  { name:'Teal',  gold:'#0E7C6B', mid:'#1AA08A', light:'#E0F5F1', navy:'#071C25', navy2:'#0D2E3E', navy3:'#124558' },
-};
-
-export const THEME_DEFAULTS = { accent: 'teal' };
 
 export const NAV_LINKS = [
   { href:'#services',   label:'Services'   },
@@ -37,7 +29,7 @@ export const HERO_METRICS = [
 export const SERVICES = [
   {
     icon:'☁️', title:'Cloud Deployment & DevOps',
-    desc:'Full-stack cloud deployments on AWS, GCP, and Azure — CI/CD pipelines, containerisation, Kubernetes, and infrastructure as code so you ship faster with zero downtime.',
+    desc:'Full-stack cloud deployments on AWS, GCP, and Azure, CI/CD pipelines, containerisation, Kubernetes, and infrastructure as code so you ship faster with zero downtime.',
     tags:['AWS','GCP','Azure','Terraform','Docker','K8s','CI/CD'],
   },
   {
@@ -47,22 +39,22 @@ export const SERVICES = [
   },
   {
     icon:'🛡️', title:'Legacy Project Support',
-    desc:'We rescue and extend older codebases at minimal rates — bug triage, dependency upgrades, performance tuning, and incremental modernisation without a full rewrite.',
+    desc:'We rescue and extend older codebases at minimal rates, bug triage, dependency upgrades, performance tuning, and incremental modernisation without a full rewrite.',
     tags:['Java','PHP','Legacy','Refactoring','Migration'],
   },
   {
     icon:'📱', title:'Android App Development',
-    desc:'Scalable, production-ready Android apps built with Kotlin and Jetpack Compose — from solo MVP to enterprise deployments with dedicated support post-launch.',
+    desc:'Scalable, production-ready Android apps built with Kotlin and Jetpack Compose, from solo MVP to enterprise deployments with dedicated support post-launch.',
     tags:['Kotlin','Jetpack Compose','Android','Firebase','REST'],
   },
   {
     icon:'🧪', title:'QA & Testing Services',
-    desc:'Manual and automated testing on demand — functional, regression, load, and end-to-end. We can embed a tester into your team or run a full test cycle on your release.',
+    desc:'Manual and automated testing on demand, functional, regression, load, and end-to-end. We can embed a tester into your team or run a full test cycle on your release.',
     tags:['Selenium','Playwright','JUnit','Manual QA','Load Testing'],
   },
   {
     icon:'⚛️', title:'React & Next.js Development',
-    desc:'Modern SPAs and full-stack web apps — from landing pages to complex dashboards, built to perform at any scale.',
+    desc:'Modern SPAs and full-stack web apps, from landing pages to complex dashboards, built to perform at any scale.',
     tags:['React','Next.js','TypeScript','Tailwind','Redux'],
   },
   {
@@ -72,12 +64,12 @@ export const SERVICES = [
   },
   {
     icon:'🌐', title:'Node.js & Express APIs',
-    desc:'Fast, scalable REST and GraphQL APIs — the perfect backend for any frontend or mobile application.',
+    desc:'Fast, scalable REST and GraphQL APIs, the perfect backend for any frontend or mobile application.',
     tags:['Node.js','Express','REST','GraphQL','JWT'],
   },
   {
     icon:'☕', title:'Java & Spring Engineering',
-    desc:'Enterprise-grade backends with Java 17+, Spring Boot, and Spring AI — built for scale and longevity.',
+    desc:'Enterprise-grade backends with Java 17+, Spring Boot, and Spring AI, built for scale and longevity.',
     tags:['Java','Spring Boot','Spring AI','Microservices'],
   },
   {
@@ -97,44 +89,7 @@ export const SERVICES = [
   },
 ];
 
-export const WORKS = [
-  {
-    num:'01', title:'20 Crore Document Migration',
-    desc:'Parallel batch migration of 200M+ documents across federated databases — zero data loss, custom validation pipelines, minimal downtime.',
-    outcome:'200M+ documents migrated without data loss',
-    tags:['Java','Spring Batch','ETL','Validation'],
-  },
-  {
-    num:'02', title:'Graph-Powered RAG System',
-    desc:'RAG platform leveraging Neo4j relationship graphs for contextually rich AI responses — far beyond flat vector retrieval.',
-    outcome:'Graph-aware AI retrieval in production',
-    tags:['Neo4j','LangChain','Spring AI','Embeddings'],
-  },
-  {
-    num:'03', title:'Enterprise Semantic Search',
-    desc:'Dense-embedding semantic pipeline over OpenSearch replacing legacy keyword search, dramatically improving precision and recall at scale.',
-    outcome:'Enterprise-grade semantic precision',
-    tags:['OpenSearch','Python','Embeddings','REST'],
-  },
-  {
-    num:'04', title:'Identity OCR & Liveness Detection',
-    desc:'Full document-intelligence pipeline: ID card image extraction, structured OCR field parsing, biometric liveness detection to prevent spoofing.',
-    outcome:'Real-time identity verification',
-    tags:['OpenCV','Tesseract','Python','Java'],
-  },
-  {
-    num:'05', title:'Transactional Email Platform',
-    desc:'High-throughput notification system with dynamic Thymeleaf templating, retry logic, delivery analytics, and a live monitoring dashboard.',
-    outcome:'Reliable, high-volume delivery',
-    tags:['JavaMail','Thymeleaf','Redis','Spring'],
-  },
-  {
-    num:'06', title:'SPARQL Version Hierarchy System',
-    desc:'Temporal SPARQL query engine with version-based hierarchy for complex ontological data — enabling precise time-travel navigation.',
-    outcome:'Complex ontology querying at scale',
-    tags:['SPARQL','RDF','Java','OWL'],
-  },
-];
+/* WORKS now lives server-side (data/content.seed.json), managed via the admin panel at /admin */
 
 export const TEAM_COLUMNS = [
   {
@@ -152,7 +107,7 @@ export const TEAM_COLUMNS = [
 ];
 
 export const WHY_CARDS = [
-  { icon:'🏗️', title:'Full-stack under one roof',    desc:'Frontend, backend, cloud, mobile, and AI — one team, zero coordination overhead between agencies.' },
+  { icon:'🏗️', title:'Full-stack under one roof',    desc:'Frontend, backend, cloud, mobile, and AI, one team, zero coordination overhead between agencies.' },
   { icon:'⚡',  title:'Startup speed',               desc:'We move fast. Small projects shipped in days; large builds with weekly deliverables and full transparency.' },
   { icon:'🤝', title:'Dedicated support team',       desc:'Post-launch, a dedicated support squad monitors, patches, and extends your product so you can focus on growth.' },
   { icon:'💸', title:'Minimal rates for legacy',     desc:'Got an older project that just needs love? We offer highly competitive rates to maintain and modernise existing codebases.' },
@@ -168,7 +123,7 @@ export const TIMELINE_ITEMS = [
       'Security hardening, OAuth2/JWT, and compliance-ready architecture',
       'Scalable Android apps with Kotlin and Jetpack Compose',
       'Legacy project rescue and modernisation at competitive rates',
-      'Manual and automated QA — embedded testers or full release cycles',
+      'Manual and automated QA, embedded testers or full release cycles',
       'Migrated 20+ crore documents across federated databases with zero data loss',
       'Graph-powered RAG systems, semantic search, and OCR pipelines',
       'Operated NoSQL stores at scale: MongoDB, Redis, Neo4j, Cassandra',
@@ -176,9 +131,7 @@ export const TIMELINE_ITEMS = [
   },
 ];
 
-export const CONTACT_LINKS = [
-  { icon:'✉', label:'newbietech11@gmail.com', href:'mailto:newbietech11@gmail.com' },
-];
+/* Contact info (email, phone, instagram, address) now lives server-side (data/content.seed.json), managed via the admin panel at /admin */
 
 /* Paste your deployed Google Apps Script URL here */
 export const FORM_ENDPOINT = '';
@@ -284,28 +237,28 @@ export const TOOLS = [
   {
     id:'currency', icon:'💱',
     title:'Currency Recognizer', sub:'Extract values from any text',
-    desc:'Instantly detect and extract currency values from raw text — useful for invoice processing, financial document parsing, and automated data extraction.',
+    desc:'Instantly detect and extract currency values from raw text, useful for invoice processing, financial document parsing, and automated data extraction.',
     placeholder:'e.g. "Invoice total is $1,200.50 and €800 with ₹50,000 deposit"',
     run: runCurrencyRecognizer,
   },
   {
     id:'extract', icon:'📋',
     title:'Text Extractor', sub:'Emails, URLs, dates, phone numbers',
-    desc:'Extract structured entities from unstructured text — email addresses, website URLs, dates, and phone numbers in one pass.',
+    desc:'Extract structured entities from unstructured text, email addresses, website URLs, dates, and phone numbers in one pass.',
     placeholder:'Paste any text containing emails, URLs, dates, or phone numbers...',
     run: runTextExtractor,
   },
   {
     id:'ocr', icon:'🪪',
     title:'OCR Field Parser', sub:'Structured extraction from ID documents',
-    desc:'Simulate the OCR extraction engine built for identity documents — extract Name, DOB, ID Number, Expiry, and Address from raw OCR output.',
+    desc:'Simulate the OCR extraction engine built for identity documents, extract Name, DOB, ID Number, Expiry, and Address from raw OCR output.',
     placeholder:'e.g. "Name: John Doe  DOB: 01/01/1990  ID No: AB123456  Expiry: 12/2028"',
     run: runOcrParser,
   },
   {
     id:'sentiment', icon:'🎭',
     title:'Sentiment Analysis', sub:'Positive / Negative / Neutral',
-    desc:'Score the sentiment of any text — ideal for customer feedback pipelines, review classification, and content moderation systems.',
+    desc:'Score the sentiment of any text, ideal for customer feedback pipelines, review classification, and content moderation systems.',
     placeholder:'Type any text to analyze its tone and sentiment...',
     run: runSentimentAnalysis,
   },

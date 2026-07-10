@@ -16,7 +16,7 @@ export class Services extends Component {
     return `
       <div class="eyebrow reveal">Services</div>
       <h2 class="stitle reveal">Everything your<br><em>product needs</em></h2>
-      <p class="sdesc reveal">Cloud, security, mobile, AI, and full-stack — startup-speed delivery with enterprise-grade quality.</p>
+      <p class="sdesc reveal">Cloud, security, mobile, AI, and full-stack, startup-speed delivery with enterprise-grade quality.</p>
       <div class="svc-grid">${cards}</div>
     `;
   }

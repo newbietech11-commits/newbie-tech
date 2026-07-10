@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newbie Tech - Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <div id="login-screen" class="wrap">
+    <h1>Admin Login</h1>
+    <p class="sub">Enter the admin password to manage Work entries and contact info.</p>
+    <div class="card">
+      <div id="login-error" class="error hidden"></div>
+      <label>Password</label>
+      <input type="password" id="login-password" placeholder="••••••••">
+      <button id="login-btn">Log In</button>
+    </div>
+  </div>
+
+  <div id="admin-screen" class="wrap hidden">
+    <div class="top-row">
+      <div>
+        <h1>Newbie Tech Admin</h1>
+        <p class="sub">Manage Work case studies and contact info shown on the site.</p>
+      </div>
+      <button class="secondary" id="logout-btn">Log Out</button>
+    </div>
+
+    <div class="card">
+      <h2>Contact Info</h2>
+      <div id="contact-error" class="error hidden"></div>
+      <label>Email</label>
+      <input id="c-email" placeholder="you@company.com">
+      <label>Phone</label>
+      <input id="c-phone" placeholder="+91 98765 43210">
+      <label>Instagram URL</label>
+      <input id="c-instagram" placeholder="https://instagram.com/yourhandle">
+      <label>Address</label>
+      <input id="c-address" placeholder="City, Country">
+      <button id="contact-save-btn">Save Contact Info</button>
+    </div>
+
+    <div class="card">
+      <h2>Add Work Case Study</h2>
+      <div id="work-error" class="error hidden"></div>
+      <label>Title</label>
+      <input id="w-title" placeholder="Case study title">
+      <label>Description</label>
+      <textarea id="w-desc" placeholder="What was built and how"></textarea>
+      <label>Outcome</label>
+      <input id="w-outcome" placeholder="One-line result">
+      <label>Tags (comma-separated)</label>
+      <input id="w-tags" placeholder="React, Node.js, AWS">
+      <button id="work-add-btn">Add Work</button>
+    </div>
+
+    <div class="card">
+      <h2>Existing Work</h2>
+      <div id="works-list"></div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

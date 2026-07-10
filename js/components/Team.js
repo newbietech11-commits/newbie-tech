@@ -21,7 +21,7 @@ export class Team extends Component {
     return `
       <div class="eyebrow reveal">Our Team</div>
       <h2 class="stitle reveal">A studio built for<br><em>the full product</em></h2>
-      <p class="sdesc reveal">Frontend specialists, backend engineers, and AI experts — collaborating so you never have to coordinate multiple agencies.</p>
+      <p class="sdesc reveal">Frontend specialists, backend engineers, and AI experts, collaborating so you never have to coordinate multiple agencies.</p>
       <div class="team-cols">${cols}</div>
       <div class="why-grid">${why}</div>
     `;

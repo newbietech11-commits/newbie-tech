@@ -36,7 +36,7 @@ export class Hero extends Component {
         </div>
         <h1 class="htitle">Ship faster.<br><em>Scale</em> further.<br>Stay secure.</h1>
         <p class="hero-sub">
-          Newbie Tech is a startup engineering studio — 5+ years building full-stack products,
+          Newbie Tech is a startup engineering studio, 5+ years building full-stack products,
           cloud infrastructure, Android apps, and AI systems. Small freelance projects or large
           enterprise builds; we fit your scale and budget.
         </p>

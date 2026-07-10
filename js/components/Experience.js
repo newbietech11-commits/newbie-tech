@@ -22,7 +22,7 @@ export class Experience extends Component {
           <h3 class="exp-left-title">Proven track record</h3>
           <p class="exp-left-desc">
             5+ years of hands-on delivery across full-stack, cloud, DevOps, mobile, security,
-            and AI — from zero-to-one startup builds to enterprise-scale production systems
+            and AI, from zero-to-one startup builds to enterprise-scale production systems
             supporting millions of users.
           </p>
           <div class="exp-callout">

@@ -1,11 +1,34 @@
 import { Component } from './Component.js';
-import { CONTACT_LINKS, ENGAGEMENT_TYPES, FORM_ENDPOINT } from '../data.js';
+import { ENGAGEMENT_TYPES, FORM_ENDPOINT } from '../data.js';
+import { API_BASE } from '../config.js';
+
+function buildContactLinks(contact) {
+  const links = [];
+  if (contact.email) links.push({ icon: '✉', label: contact.email, href: `mailto:${contact.email}` });
+  if (contact.phone) links.push({ icon: '☎', label: contact.phone, href: `tel:${contact.phone.replace(/\s+/g, '')}` });
+  if (contact.instagram) links.push({ icon: '📷', label: 'Instagram', href: contact.instagram });
+  if (contact.address) links.push({ icon: '📍', label: contact.address, href: null });
+  return links;
+}
 
 export class Contact extends Component {
+  async init() {
+    if (!this.el) return this;
+    try {
+      const res = await fetch(`${API_BASE}/api/contact`);
+      this._contact = res.ok ? await res.json() : {};
+    } catch {
+      this._contact = {};
+    }
+    this.el.innerHTML = this.render();
+    this.bindEvents();
+    return this;
+  }
+
   _formHtml() {
     const options = ENGAGEMENT_TYPES.map(t => `<option>${t}</option>`).join('');
-    const links   = CONTACT_LINKS.map(l => `
-      <a class="clink" href="${l.href}">
+    const links   = buildContactLinks(this._contact || {}).map(l => `
+      <a class="clink" href="${l.href || '#'}" ${l.href ? '' : 'onclick="return false"'}>
         <div class="clink-icon">${l.icon}</div>${l.label}
       </a>`).join('');
 
@@ -15,7 +38,7 @@ export class Contact extends Component {
           <div class="cinfo">
             <h3>Let's build together</h3>
             <p>Whether you need a React frontend, a Java backend, an AI-powered feature, or the
-               complete product end-to-end — we'd love to hear about it.</p>
+               complete product end-to-end, we'd love to hear about it.</p>
             <div class="clinks">${links}</div>
           </div>
         </div>
@@ -63,7 +86,7 @@ export class Contact extends Component {
     return `
       <div class="eyebrow reveal">Contact</div>
       <h2 class="stitle reveal">Ready to build<br><em>something great?</em></h2>
-      <p class="sdesc reveal">Tell us about your project — we'll scope it, quote it, and deliver the full stack.</p>
+      <p class="sdesc reveal">Tell us about your project, we'll scope it, quote it, and deliver the full stack.</p>
       <div id="contact-body">${this._formHtml()}</div>
     `;
   }

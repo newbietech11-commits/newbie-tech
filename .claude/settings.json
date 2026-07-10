@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(npx --version)",
+      "Bash(npm ls *)",
+      "Bash(npx --no-install playwright --version)",
+      "Bash(node \"C:\\\\Users\\\\katar\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-katar-newbie-tech\\\\aec2fe86-8c88-4bc8-896c-bdb31f2ade18\\\\scratchpad\\\\static-server.js\" . 5173)",
+      "Bash(disown)",
+      "Bash(curl -sf http://localhost:5173/ -o /dev/null)",
+      "Bash(start http://localhost:5173/)",
+      "Bash(curl -s http://localhost:5173/js/main.js -o /dev/null -w \"main.js: %{http_code}\\\\n\")",
+      "Bash(curl -s http://localhost:5173/css/base.css -o /dev/null -w \"base.css: %{http_code}\\\\n\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" https://registry.npmjs.org/ --max-time 5)",
+      "Read(//c/Users/katar/AppData/Local/Temp/claude/c--Users-katar-newbie-tech/aec2fe86-8c88-4bc8-896c-bdb31f2ade18/scratchpad/**)",
+      "Bash(npm init *)",
+      "Bash(npm install *)",
+      "Bash(npx playwright *)",
+      "Read(//c/Users/katar/AppData/Local/Temp/claude/c--Users-katar-newbie-tech/aec2fe86-8c88-4bc8-896c-bdb31f2ade18/scratchpad/node_modules/.bin/**)",
+      "Read(//c/Users/katar/AppData/Local/ms-playwright/**)",
+      "Bash(node check.js)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(node /c/Users/katar/AppData/Local/Temp/claude/c--Users-katar-newbie-tech/aec2fe86-8c88-4bc8-896c-bdb31f2ade18/scratchpad/static-server.js /c/Users/katar/newbie-tech 5173)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:5173/js/main.js)",
+      "Bash(node check2.js)",
+      "Bash(curl -s http://localhost:5173/api/works)",
+      "Bash(curl -s http://localhost:5173/api/contact)",
+      "Bash(curl -s -o /dev/null -w \"index: %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(curl -s -o /dev/null -w \"admin: %{http_code}\\\\n\" http://localhost:5173/admin/)",
+      "Bash(curl -s -o /dev/null -w \"unauth POST works: %{http_code}\\\\n\" -X POST http://localhost:5173/api/works -H \"Content-Type: application/json\" -d '{\"title\":\"x\",\"desc\":\"y\"}')",
+      "Bash(node check_admin.js)",
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\).on\\('end',\\(\\)=>{const arr=JSON.parse\\(d\\);console.log\\(arr.length,'works'\\);console.log\\(arr[arr.length-1]\\);}\\)\")",
+      "Bash(curl -s -c /tmp/nt_cookies.txt -X POST http://localhost:5173/api/admin/login -H \"Content-Type: application/json\" -d '{\"password\":\"newbie2026\"}')",
+      "Bash(curl -s -b /tmp/nt_cookies.txt -X DELETE http://localhost:5173/api/works/7)",
+      "Bash(curl -s -b /tmp/nt_cookies.txt -X PUT http://localhost:5173/api/contact -H \"Content-Type: application/json\" -d '{\"email\":\"newbietech11@gmail.com\",\"phone\":\"\",\"instagram\":\"\",\"address\":\"\"}')",
+      "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\).on\\('end',\\(\\)=>{console.log\\(JSON.parse\\(d\\).length,'works remaining'\\)}\\)\")",
+      "Bash(rm -f /tmp/nt_cookies.txt)"
+    ]
+  }
+}
