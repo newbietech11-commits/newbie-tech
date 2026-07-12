@@ -1,0 +1,45 @@
+.admin-page {
+  min-height: 100vh;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: #F8F7F5;
+  color: #0C1628;
+}
+.admin-page * { box-sizing: border-box; }
+.admin-page .wrap { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+.admin-page h1 { font-size: 22px; margin: 0 0 4px; }
+.admin-page h2 { font-size: 16px; margin: 0 0 16px; text-transform: uppercase; letter-spacing: 0.6px; color: #56657A; }
+.admin-page .sub { color: #56657A; margin: 0 0 32px; font-size: 14px; }
+
+.admin-page .card {
+  background: white; border: 1px solid #E3E7EE; border-radius: 12px;
+  padding: 24px; margin-bottom: 24px;
+}
+
+.admin-page label { display: block; font-size: 12px; font-weight: 600; color: #56657A; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.4px; }
+.admin-page input, .admin-page textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid #E3E7EE; border-radius: 6px;
+  font-family: inherit; font-size: 14px; margin-bottom: 14px; outline: none;
+}
+.admin-page input:focus, .admin-page textarea:focus { border-color: #0E7C6B; }
+.admin-page textarea { min-height: 70px; resize: vertical; }
+
+.admin-page button {
+  background: #0E7C6B; color: white; border: none; border-radius: 6px;
+  padding: 10px 18px; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.admin-page button:hover { background: #1AA08A; }
+.admin-page button.secondary { background: transparent; color: #56657A; border: 1px solid #E3E7EE; }
+.admin-page button.danger { background: #B23B3B; }
+.admin-page button.danger:hover { background: #C94B4B; }
+
+.admin-page .top-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+
+.admin-page .work-item { border: 1px solid #E3E7EE; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; }
+.admin-page .work-item h3 { margin: 0 0 6px; font-size: 15px; }
+.admin-page .work-item p { margin: 0 0 8px; font-size: 13px; color: #56657A; }
+.admin-page .work-item .tags { font-size: 12px; color: #8A99AE; margin-bottom: 10px; }
+.admin-page .work-item .actions { display: flex; gap: 8px; }
+
+.admin-page .error { color: #B23B3B; font-size: 13px; margin-bottom: 12px; }
+
+.admin-page #login-screen { max-width: 340px; margin: 120px auto; }
